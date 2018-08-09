@@ -14,8 +14,6 @@ with open(csvpath, newline="") as csvfile:
 
     count = 0
     total = 0
-    maximum = 0
-    minimum = 0
 
     for row in csvreader:
         count = count + 1
@@ -30,19 +28,23 @@ for a, b in zip(profitloss, profitloss[1:]):
 total_change = sum(profitlosschange)
 avg_change = total_change / (int(count) -1)
 
-for monthchange in profitlosschange:
-    if int(monthchange) > maximum:
-        maximum = int(monthchange)
-    if int(monthchange) < minimum:
-        minimum = int(monthchange)
+maximum = max(profitlosschange)
+minimum = min(profitlosschange)
+
+max_index = profitlosschange.index(maximum)
+min_index = profitlosschange.index(minimum)
+
+max_date = date[max_index + 1]
+min_date = date[min_index + 1]
+
 
 print("Financial Analysis")
 print("------------------------")
 print(f'Total months: {count}')
 print(f'Total: ${total:.2f}')
 print(f'Average Change: ${avg_change:.2f}')
-print(f'Greatest Increase in Profits: ${maximum:.2f}')
-print(f'Greatest Decrease in Profits: ${minimum:.2f}')
+print(f'Greatest Increase in Profits: {max_date} ${maximum:.2f}')
+print(f'Greatest Decrease in Profits: {min_date} ${minimum:.2f}')
 
 
 
