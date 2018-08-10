@@ -48,11 +48,4 @@ print(f'Greatest Decrease in Profits: {min_date} ${minimum:.2f}')
 
 
 
-
-
-
-
-
-
-
 # In addition, your final script should both print the analysis to the terminal and export a text file with the results.
