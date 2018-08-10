@@ -56,6 +56,10 @@ print("-----------------------")
 print(f'Winner: {winner}')
 print("-----------------------")
 
+txtwriter = open(os.path.join('PyPoll.txt'), "w")
+
+txtwriter.write(f'{candidates[0]}: {candidate1percent:.2f}% ({candidate1count}), {candidates[1]}: {candidate2percent:.2f}% ({candidate2count}), {candidates[2]}: {candidate3percent:.2f}% ({candidate3count}),{candidates[3]}: {candidate4percent:.2f}% ({candidate4count}), Winner: {winner}')  
+
 
 #In addition, your final script should both print the analysis to the terminal and export a text file with the results.
 
