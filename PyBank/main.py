@@ -49,5 +49,3 @@ print(f'Greatest Decrease in Profits: {min_date} ${minimum:.2f}')
 txtwriter = open(os.path.join('PyBank.txt'), "w")
 
 txtwriter.write(f'Total months: {count}, Total: ${total:.2f}, Greatest Increase in Profits: {max_date} ${maximum:.2f}, Greatest Decrease in Profits: {min_date} ${minimum:.2f}')
-
-# In addition, your final script should both print the analysis to the terminal and export a text file with the results.
